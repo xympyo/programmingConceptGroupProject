@@ -87,11 +87,11 @@ public class App {
                             if (vehicleType < 0 && vehicleType > 1) {
                                 continue;
                             } else if (vehicleType == 1) {
-                                int motorTime = entryTime[indexPark] - exitTime[indexPark];
+                                int motorTime = exitTime[indexPark] - entryTime[indexPark];
                                 System.out.println("Your cost will be " + (motorTime * 2500));
                                 exit = false;
                             } else {
-                                int carTime = entryTime[indexPark] - exitTime[indexPark];
+                                int carTime = exitTime[indexPark] - entryTime[indexPark];
                                 System.out.println("Your cost will be " + (carTime * 5000));
                                 exit = false;
                             }
@@ -99,8 +99,7 @@ public class App {
                             System.out.println("You have failed for " + counter + " times.");
                             counter++;
                             if (counter == 5) {
-                                System.out
-                                        .println("You have failed too many times, you can not exit your vehicle.");
+                                System.out.println("You have failed too many times, you can not exit your vehicle.");
                                 break;
                             }
                         }
