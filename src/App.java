@@ -17,11 +17,11 @@ public class App {
             System.out.println("Enter your License Plate : (Combination of 1 Variable and 3 Integer)");
             System.out.println("For example : (1234)");
             LicensePlate[i] = input.nextInt();
-            System.out.println("How can we help ?");
             System.out.println("Enter your Vehicle Type : ");
             System.out.println("1. Motorcycle");
             System.out.println("2. Car");
             vehicleType = input.nextInt();
+            System.out.println("How can we help ?");
             System.out.println("1. Vehicle Entry");
             System.out.println("2. Vehicle Exit");
             System.out.println("3. View Parking Lot");
@@ -36,20 +36,21 @@ public class App {
                 // while (parkingFloor < parkingSpace[parkingFloor][parkingRoom]) {
                 boolean a = true;
                 while (a) {
+                    int parkingFloorQ = 0;
                     System.out.println(
                             "Choose what floor to park in : (PLEASE ONLY INPUT EITHER FLOOR 1 OR 2)");
-                    int parkingFloorQ = input.nextInt();
+                    parkingFloorQ = input.nextInt();
                     parkingFloorQ -= 1;
-                    int t = 0;
                     if (parkingFloorQ < 0 && parkingFloorQ > 1) {
                         System.out.println("Invalid Input!, please try again : ");
                         parkingFloorQ = input.nextInt();
                         parkingFloorQ -= 1;
                     } else if (parkingFloorQ == 0) {
+                        System.out.println("what");
                         parkingFloorQ = 0;
                         for (int x = 0; x < parkingSpace[parkingFloorQ].length; x++) {
                             if (parkingSpace[parkingFloorQ][parkingRoom] == 0) {
-                                for (t = 0; t < parkingSpace[parkingFloorQ].length; t++) {
+                                for (int t = 0; t < parkingSpace[parkingFloorQ].length; t++) {
                                     if (parkingSpace[parkingFloorQ][t] == 0) {
                                         System.out
                                                 .println("[" + t + "] Available. ");
@@ -79,7 +80,7 @@ public class App {
                         }
                     } else if (parkingFloorQ == 1) {
                         parkingFloorQ = 1;
-                        for (t = 0; t < parkingSpace[parkingFloorQ].length; t++) {
+                        for (int t = 0; t < parkingSpace[parkingFloorQ].length; t++) {
                             if (parkingSpace[parkingFloorQ][parkingRoom] == 0) {
                                 System.out
                                         .println("There is an empty Parking Space in Floor 1.");
@@ -94,7 +95,7 @@ public class App {
                         }
                         for (int x = 0; x < parkingSpace[parkingFloorQ].length; x++) {
                             if (parkingSpace[parkingFloorQ][parkingRoom] == 0) {
-                                for (t = 0; t < parkingSpace[parkingFloorQ].length; t++) {
+                                for (int t = 0; t < parkingSpace[parkingFloorQ].length; t++) {
                                     if (parkingSpace[parkingFloorQ][parkingRoom] == 0) {
                                         System.out
                                                 .println("[" + t + "] Available. ");
